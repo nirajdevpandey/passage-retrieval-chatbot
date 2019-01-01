@@ -28,6 +28,8 @@ In a large text corpus, some words will be very present (e.g. `the`, `a`, `is` i
 
 In order to re-weight the count features into floating point values suitable for usage by a classifier it is very common to use the tf–idf transform.
 
+![title](https://github.com/nirajdevpandey/passage-retrieval-chatbot/blob/master/data/images/1_8XpbsR4HdAHBXy5MgpIyug.png)
+
 Tf means term-frequency while tf–idf means term-frequency times inverse document-frequency. 
 Term-frequency refer to the times a particular word x appears in a document. Whereas, inverse document-frequency means that how many time the word x appears in entire corpus of document. 
 ***
