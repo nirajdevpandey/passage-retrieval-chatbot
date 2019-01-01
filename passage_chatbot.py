@@ -27,7 +27,7 @@ def paragraphs(file, separator=None):
         yield ''.join(paragraph)
 
 
-response_file = "oscar-wilde-quotes.txt"
+response_file = "data.txt"
 with open(response_file, 'rb') as f :
     data = f.read().decode('ISO-8859-1')
     responses = [line.strip() for line in paragraphs(data)]
