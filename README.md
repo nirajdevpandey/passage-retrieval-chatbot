@@ -3,6 +3,8 @@
 Input a text file separated with many paragraphs and ask a question to get relevant passage back based on TF-IDF wights 
 
 #### Following s the details & workflow of the repository 
+This chatbot work with a text file which has number of passages in it. Most of the work comes in preprocessing this collection to index its candidate utterances using the TFIDF model so we can easily find the utterance that's most similar to what the user has just said.
+
 In a large text corpus, some words will be very present (e.g. `the`, `a`, `is` in English) hence carrying very little meaningful information about the actual contents of the document. If we were to feed the direct count data directly to a classifier those very frequent terms would shadow the frequencies of rarer yet more interesting terms.
 
 In order to re-weight the count features into floating point values suitable for usage by a classifier it is very common to use the tf–idf transform.
