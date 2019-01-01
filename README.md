@@ -40,6 +40,6 @@ As usual the best way to adjust the feature extraction parameters is to use a cr
 > Improvement: There are many improvements to information retrieval models nowadays, including [Google's PageRank](http://en.wikipedia.org/wiki/PageRank) model to weight documents based on their importance and a variety of improved statistical models of document topics. 
 
 ```diff
-- This method was not that helpful for me so I would suggest to use other algorithms instead
+- This method was not that helpful for me so I would suggest to use other algorithms instead. Reason being the nature of data I was dealing with.
 ```
-
+***
