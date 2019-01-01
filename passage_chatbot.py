@@ -3,7 +3,9 @@
 """
 
 Author __Niraj Dev Pandey__
-Purpose __ TF_IDF Pssage retrieval bot__
+Purpose = TF_IDF Passage retrieval bot which will give us a relevant passage bades on the tfidf socore
+and that passage can be later given to BERT or other MACHINE COMPREHENSION algorithms to generate logical
+answer for any given query
 
 """
 
@@ -32,8 +34,8 @@ with open(response_file, 'rb') as f :
     data = f.read().decode('ISO-8859-1')
     responses = [line.strip() for line in paragraphs(data)]
 
-responses[16:25]
-data[0:200]
+
+#Depending on your kinf of text file you should choose the right decoding methods.
 
 stop_word_file = "./data/stop-word-list.txt"
 with open(stop_word_file,"rb") as f :
@@ -53,6 +55,7 @@ def count_test(text, vocabulary) :
     words = [w for w in content_words(text) if w in vocabulary]
     return collections.Counter(words)
 
+#One can also go with Sklearn data preprocessing documentation for easy implementation of the td-idf
 
 def mk_idf(vocabulary, counts) :
     ndocs = float(len(counts))
@@ -74,6 +77,7 @@ counts = [count_train(utt, vocabulary) for utt in responses]
 idf_dict = mk_idf(vocabulary, counts)
 scores = [mk_tf_idf(count, idf_dict) for count in counts]
 
+#cosine similarity measures
 
 def similarity(d1, d2) :
     return sum(d1[w] * d2[w] for w in d1 if w in d2)
@@ -107,14 +111,14 @@ if __name__ == '__main__':
 Hi Niraj
 
 Talk to the me by typing in plain English and please Enter "quit" when done.'""")
-    print('='*72)
     print()
-    s = ""
-    while s != "quit":
+    print()
+    query = ""
+    while query != "quit":
         
-        s = input(">>")
-        while s and s[-1] in "!.":
-            s = s[:-1]        
+        query = input(">>")
+        while query and query[-1] in "!.":
+            query = query[:-1]        
         
-        print(respond(s))
+        print(respond(query))
 
