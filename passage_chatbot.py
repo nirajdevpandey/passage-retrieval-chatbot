@@ -27,7 +27,7 @@ def paragraphs(file, separator=None):
         yield ''.join(paragraph)
 
 
-response_file = "data.txt"
+response_file = "./data/data.txt"
 with open(response_file, 'rb') as f :
     data = f.read().decode('ISO-8859-1')
     responses = [line.strip() for line in paragraphs(data)]
@@ -35,7 +35,7 @@ with open(response_file, 'rb') as f :
 responses[16:25]
 data[0:200]
 
-stop_word_file = "stop-word-list.txt"
+stop_word_file = "./data/stop-word-list.txt"
 with open(stop_word_file,"rb") as f :
     stop_words = set(line.strip() for line in f)
     
