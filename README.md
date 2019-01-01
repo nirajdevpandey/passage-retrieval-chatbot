@@ -3,7 +3,26 @@
 Input a text file separated with many paragraphs and ask a question to get relevant passage back based on TF-IDF wights 
 
 #### Following s the details & workflow of the repository 
-This chatbot work with a text file which has number of passages in it. Most of the work comes in preprocessing this collection to index its candidate utterances using the TFIDF model so we can easily find the utterance that's most similar to what the user has just said.
+This chatbot work with a text file which has number of passages in it. Most of the work comes in preprocessing this collection to index its candidate utterances using the TFIDF model so we can easily find the utterance that's most similar to what the user has just said. The devision of the passage is based on the blank space between two paragraphs. 
+
+```python
+def paragraphs(file, separator=None):
+    if not callable(separator):
+        if separator != None: 
+            print("TypeError separator must be callable")
+        def separator(line): 
+            return line == '\n'
+    paragraph = []
+    for line in file:
+        if separator(line):
+            if paragraph:
+                yield ''.join(paragraph)
+                paragraph = []
+        else:
+            paragraph.append(line)
+    if paragraph :
+        yield ''.join(paragraph)
+ ```
 
 In a large text corpus, some words will be very present (e.g. `the`, `a`, `is` in English) hence carrying very little meaningful information about the actual contents of the document. If we were to feed the direct count data directly to a classifier those very frequent terms would shadow the frequencies of rarer yet more interesting terms.
 
