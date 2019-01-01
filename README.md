@@ -37,3 +37,5 @@ Term-frequency refer to the times a particular word x appears in a document. Whe
 
 As usual the best way to adjust the feature extraction parameters is to use a cross-validated grid search, for instance by pipelining the [feature extractor with a classifier](https://scikit-learn.org/stable/auto_examples/model_selection/grid_search_text_feature_extraction.html#sphx-glr-auto-examples-model-selection-grid-search-text-feature-extraction-py)
 
+> Improvement: There are many improvements to information retrieval models nowadays, including [Google's PageRank](http://en.wikipedia.org/wiki/PageRank) model to weight documents based on their importance and a variety of improved statistical models of document topics. 
+
