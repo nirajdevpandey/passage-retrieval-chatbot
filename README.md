@@ -2,7 +2,7 @@
 
 Input a text file separated with many paragraphs and ask a question to get relevant passage back based on TF-IDF wights 
 ***
-#### Following s the details & workflow of the repository 
+#### Following is the details & workflow of the repository 
 This chatbot work with a text file which has number of passages in it. Most of the work comes in preprocessing this collection to index its candidate utterances using the TFIDF model so we can easily find the utterance that's most similar to what the user has just said. The devision of the passage is based on the blank space between two paragraphs. 
 
 ```python
