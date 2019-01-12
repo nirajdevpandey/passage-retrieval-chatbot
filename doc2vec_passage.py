@@ -22,7 +22,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 
-filename = ('MDE_passage.txt')
+filename = ('data/data.txt')
 
 
 def read_corpus(fname, tokens_only=False):
@@ -66,9 +66,6 @@ for doc_id in range(len(train_corpus)):
     ranks.append(rank)
     
     second_ranks.append(sims[1])
-
-
-# In[ ]:
 
 
 def similarDoc(doc_id,sim_id):
